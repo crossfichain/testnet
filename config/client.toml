@@ -1,0 +1,5 @@
+broadcast-mode = "block"
+chain-id = "crossfi-evm-testnet-1"
+keyring-backend = "file"
+node = "tcp://localhost:26657"
+output = "text"
