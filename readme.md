@@ -1,4 +1,6 @@
-### Sync from snapshot (fast)
+## Sync node
+
+### From snapshot (fast)
 
 1. Download binary
 ```bash
@@ -15,7 +17,7 @@ git clone https://github.com/crossfichain/testnet.git
 ./bin/crossfid start --home ./testnet
 ```
 
-### Archive node sync
+### Archive
 
 1. Download binary
 ```bash
@@ -33,3 +35,26 @@ Edit testnet/config/config.toml: set `enabled = false` in `[statesync]` section.
 ```bash
 ./bin/crossfid start --home ./testnet
 ```
+
+## Run a validator
+
+1. Sync your node using instruction above
+2. Create your key by running `./bin/crossfid --home ./testnet keys add my_validator`
+3. Get address from commands output and top in up with some amount of MPX
+3. Run transaction to create a validator:
+```bash
+./bin/crossfid --home ./testnet tx staking create-validator \
+  --amount=1000000000000000000mpx \
+  --pubkey=$(./bin/crossfid --home ./testnet tendermint show-validator) \
+  --moniker="My Fist Validator" \
+  --chain-id="crossfi-evm-testnet-1" \
+  --commission-rate="0.10" \
+  --commission-max-rate="0.20" \
+  --commission-max-change-rate="0.01" \
+  --min-self-delegation="1000000" \
+  --gas="auto" \
+  --gas-prices="10000000000000mpx" \
+  --gas-adjustment=1.5 \
+  --from=my_validator
+```
+4. Check out your validator in https://test.xfiscan.com/
