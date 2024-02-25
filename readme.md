@@ -9,13 +9,20 @@ wget https://github.com/crossfichain/crossfi-node/releases/download/v0.3.0-prebu
 
 2. Download configs
 ```bash
+apt install git 
 git clone https://github.com/crossfichain/testnet.git
 ```
+3. Screen node
+ ```bash
+apt install screen
+screen -S crossfi
+```
 
-3. Start node
+4. Start node
 ```bash
 ./bin/crossfid start --home ./testnet
 ```
+If you want to exit screen you can use `ctrl + A + D`
 
 ### Archive
 
