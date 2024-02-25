@@ -39,7 +39,8 @@ Edit testnet/config/config.toml: set `enabled = false` in `[statesync]` section.
 ## Run a validator
 
 1. Sync your node using instruction above
-2. Create your key by running `./bin/crossfid --home ./testnet keys add my_validator`
+2. Create your key by running `./bin/crossfid --home ./testnet keys add my_validator`. If you already have a wallet, you can recover with 
+`./bin/crossfid --home ./testnet keys add my_validator --recover` then you can paste your mnemonics.
 3. Get address from commands output and top in up with some amount of MPX
 3. Run transaction to create a validator:
 ```bash
