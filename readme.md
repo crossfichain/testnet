@@ -42,7 +42,7 @@ Edit testnet/config/config.toml: set `enabled = false` in `[statesync]` section.
 2. Create your key by running `./bin/crossfid --home ./testnet keys add my_validator`. If you already have a wallet, you can recover with 
 `./bin/crossfid --home ./testnet keys add my_validator --recover` then you can paste your mnemonics.
 3. Get address from commands output and top in up with some amount of MPX
-3. Run transaction to create a validator:
+4. Run transaction to create a validator:
 ```bash
 ./bin/crossfid --home ./testnet tx staking create-validator \
   --amount=1000000000000000000mpx \
@@ -58,4 +58,4 @@ Edit testnet/config/config.toml: set `enabled = false` in `[statesync]` section.
   --gas-adjustment=1.5 \
   --from=my_validator
 ```
-4. Check out your validator in https://test.xfiscan.com/
+5. Check out your validator in https://test.xfiscan.com/
