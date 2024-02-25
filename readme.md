@@ -1,6 +1,6 @@
 ## Sync node
 
-### From snapshot (fast)
+### From snapshot (fast) 
 
 1. Download binary
 ```bash
@@ -17,7 +17,7 @@ git clone https://github.com/crossfichain/testnet.git
 ./bin/crossfid start --home ./testnet
 ```
 
-### Archive
+### Archive (No need to install this if you installed the first Snapshot)
 
 1. Download binary
 ```bash
@@ -39,9 +39,9 @@ Edit testnet/config/config.toml: set `enabled = false` in `[statesync]` section.
 ## Run a validator
 
 1. Sync your node using instruction above
-2. Create your key by running `./bin/crossfid --home ./testnet keys add my_validator`
+2. Create your key by running `./bin/crossfid --home ./testnet keys add my_validator` or import your wallet `./bin/crossfid --home ./testnet keys add my_validator --recover`
 3. Get address from commands output and top in up with some amount of MPX
-3. Run transaction to create a validator:
+4. Run transaction to create a validator:
 ```bash
 ./bin/crossfid --home ./testnet tx staking create-validator \
   --amount=1000000000000000000mpx \
